@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-"""simpleopt: Simple command-line option parsing.
+"""simpleopt: Dead simple command-line option parsing.
 
 Best described with an example. The following function:
 
@@ -13,9 +13,14 @@ Best described with an example. The following function:
 		'''
 		pass
 
-Produces, with almost no effort, something like this:
+wrapped like this:
 
-	Usage: simpleopt.py [OPTION]... <input_file> <output_file> 
+	import simpleopt
+	simpleopt.parse_args(example)
+	
+allows you to parse the command line options just like you'd expect:
+
+	Usage: example.py [OPTION]... <input_file> <output_file> 
 
 	Do some cool stuff and write the results to a new file.
 
