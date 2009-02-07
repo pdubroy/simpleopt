@@ -1,0 +1,26 @@
+simpleopt: Simple command-line option parsing.
+
+Best described with an example. The following function:
+
+	def example(input_file, output_file, passes=3, debug=False, quiet=True):
+		'''Do some cool stuff and write the results to a new file.
+
+		passes -- the number of passes to make on input_file
+		debug -- Print extra debug information to the console
+		quiet -- Print as little information as possible
+		'''
+		pass
+
+Produces, with almost no effort, something like this:
+
+	Usage: simpleopt.py [OPTION]... <input_file> <output_file> 
+
+	Do some cool stuff and write the results to a new file.
+
+	Options:
+	  -h, --help            show this help message and exit
+	  -d, --debug           Print extra debug information to the console
+	  -p PASSES, --passes=PASSES
+			                the number of passes to make on input_file
+	  -q, --quiet           Print as little information as possible
+
