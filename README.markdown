@@ -1,12 +1,13 @@
-ABOUT
------
-A Python module for dead simple command-line option parsing.
+# simpleopt.py
+
+## ABOUT
+
+simpleopt.py: A Python module for dead simple command-line option parsing.
 
 Copyright (C) 2009 Patrick Dubroy <pdubroy@gmail.com>
 Licensed under the MIT License.
 
-Description
------------
+## Description
 
 Best described with an example. The following function:
 
@@ -37,3 +38,8 @@ allows you to parse the command line options just like you'd expect:
 			                the number of passes to make on input_file
 	  -q, --quiet           Print as little information as possible
 
+## TODO
+
+- Handle variable-length arguments lists (*args)
+- When signalling errors, use the return value rather than an exception
+- Better messages when wrong args are passed in
