@@ -76,6 +76,9 @@ def parse_args(func, usage=None):
 	not specified, attempt to do a reasonable job based on the docstring.
 	
 	"""
+	
+	arg_count = len(sys.argv) - 1
+
 	parser = _build_parser(func, usage)
 	options, pos_args = parser.parse_args()
 
@@ -87,7 +90,10 @@ def parse_args(func, usage=None):
 		exc_class, exc, tb = sys.exc_info()
 		if tb.tb_next is not None:
 			raise
-		parser.error("Incorrect arguments")
+		if arg_count == 0:
+			parser.print_help()
+		else:
+			parser.error("Incorrect arguments")
 	except ArgumentError, ex:
 		parser.error(ex)
 
