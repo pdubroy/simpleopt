@@ -59,6 +59,7 @@ __license__ = "MIT License"
 
 import inspect
 import optparse
+import sys
 
 __all__ = ["parse_args", "ArgumentError"]
 
@@ -79,6 +80,11 @@ def parse_args(func, usage=None):
 	try:
 		func(*pos_args, **options.__dict__)
 	except TypeError:
+		# If there's only one frame in the traceback, then the exception
+		# occurred on the call to func. Otherwise, re-raise the exception.
+		exc_class, exc, tb = sys.exc_info()
+		if tb.tb_next is not None:
+			raise
 		parser.error("Incorrect arguments")
 	except ArgumentError, ex:
 		parser.error(ex)
