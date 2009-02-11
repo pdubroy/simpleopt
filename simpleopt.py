@@ -55,7 +55,7 @@ allows you to parse the command line options just like you'd expect:
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-__version__ = "0.2"
+__version__ = "3"
 __author__ = "Patrick Dubroy (http://dubroy.com)"
 __license__ = "MIT License"
 
